@@ -30,7 +30,7 @@ local Window = Rayfield:CreateWindow({
       FileName = "trg balls hub", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
       SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"ifeelsosigma"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      Key = {"IAMSIGMA"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
 
@@ -40,7 +40,7 @@ local MainSection = MainTab:CreateSection("Main")
 local Slider = MainTab:CreateSlider({
    Name = "walkspeed",
    Range = {0, 100},
-   Increment = 10,
+   Increment = 1,
    Suffix = "Speed",
    CurrentValue = 16,
    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
@@ -53,7 +53,7 @@ local Slider = MainTab:CreateSlider({
    Name = "JumpPower",
    Range = {0, 300},
    Increment = 10,
-   Suffix = "JumpPower",
+   Suffix = "Jump",
    CurrentValue = 50,
    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
@@ -77,7 +77,7 @@ local Button = MainTab:CreateButton({
    end,
 })
 
-local MainTab = Window:CreateTab("auto", nil) -- Title, Image
+local MainTab = Window:CreateTab("Misc", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("farming stuff")
 
 local Toggle = MainTab:CreateToggle({
@@ -88,5 +88,14 @@ local Toggle = MainTab:CreateToggle({
         while wait(1) do
         workspace.MainSleep.SleepEvent:FireServer()
             end
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Teleport")
+
+local Button = MainTab:CreateButton({
+   Name = "TELEPORT GUI",
+   Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Teleport%20Gui.lua'))()
    end,
 })
